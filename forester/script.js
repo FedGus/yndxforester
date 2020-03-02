@@ -75,7 +75,7 @@ function List() {
 						src.ucharPtr(i, j)[0] = 255; 
 						src.ucharPtr(i, j)[1] = 0; 
 						src.ucharPtr(i, j)[2] = 0; 
-						console.log(i, j)
+						//console.log(i, j)
 					}
 				}
 			}

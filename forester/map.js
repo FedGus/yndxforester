@@ -50,7 +50,7 @@ ymaps.ready(['ext.paintOnMap']).then(function () {
      map = new ymaps.Map('map', {
         // При инициализации карты обязательно нужно указать
         // её центр и коэффициент масштабирования.
-        center: [55.76, 37.64], // Москва
+        center: [55.768969, 37.548351], // Москва
         zoom: 16, 
         type: 'yandex#satellite',
         controls: []
