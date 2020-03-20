@@ -80,12 +80,16 @@ ymaps.ready(['ext.paintOnMap']).then(function () {
     map.events.add('mousedown', function (e) {
         // Если кнопка мыши была нажата с зажатой клавишей "alt", то начинаем рисование контура.
         if (e.get('altKey')) {
+            document.getElementById('map-loader').style.display = 'block';
+
             if (currentIndex == styles.length - 1) {
                 currentIndex = 0;
             } else {
                 currentIndex += 1;
             }
+
             paintProcess = ymaps.ext.paintOnMap(map, e, {style: styles[currentIndex]});
+            setTimeout(() => document.getElementById('map-loader').style.display = 'none', 5000);
         }
     });
 

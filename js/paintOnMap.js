@@ -43,6 +43,7 @@ ymaps.modules.define('ext.paintOnMap', ['meta', 'util.extend', 'pane.EventsPane'
      * @returns {ymaps.ext.paintOnMap.PaintingProcess} Процесс рисования.
      */
     function paintOnMap(map, positionOrEvent, config) {
+
         config = config || {};
         var style = extend(DEFAULT_STYLE, config.style || {});
 
@@ -100,7 +101,7 @@ ymaps.modules.define('ext.paintOnMap', ['meta', 'util.extend', 'pane.EventsPane'
 
         let canvasShow = document.getElementById("show");
 		context = canvasShow.getContext("2d");
-		let cnv = document.querySelectorAll("ymaps > .ymaps-2-1-75-user-selection-none");
+		let cnv = document.querySelectorAll("ymaps > .ymaps-2-1-76-user-selection-none");
 
 	for (let index = 1; index < cnv.length-1; index++) {
 		let canvas = cnv[index];
@@ -293,8 +294,9 @@ ymaps.modules.define('ext.paintOnMap', ['meta', 'util.extend', 'pane.EventsPane'
                 });
             }
         };
-
+       
         return paintingProcess;
+        
     }
 
     

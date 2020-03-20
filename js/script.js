@@ -1,13 +1,18 @@
 function List() {
 		
+	//document.getElementById('map-loader').style.display = 'block';
+
 	let canvasShow = document.getElementById("show");
 		context = canvasShow.getContext("2d");
-		let cnv = document.querySelectorAll("ymaps > .ymaps-2-1-75-user-selection-none");
+		let cnv = document.querySelectorAll("ymaps > .ymaps-2-1-76-user-selection-none");
 
 	for (let index = 1; index < cnv.length-1; index++) {
 		let canvas = cnv[index];
 		let bg = getStyle(canvas, "backgroundImage");
 		bg = bg.replace('url(','').replace(')','').replace(/\"/gi, ""); 
+		//console.log(bg);
+
+
 		var image =  new Image();
 		image.setAttribute("crossOrigin", "Anonymous");
 		image.crossOrigin = "Anonymous";
@@ -85,6 +90,10 @@ function List() {
 
 			src.delete(); dst.delete(); gray.delete(); opening.delete(); coinsBg.delete();
 			coinsFg.delete(); distTrans.delete(); unknown.delete(); markers.delete(); M.delete();
+
+			
+			document.getElementById('map-loader').style.display = 'none';
+
 
 		
 	
