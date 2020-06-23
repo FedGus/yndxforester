@@ -19,22 +19,12 @@
             margin: 0;
             width: 100%;
             height: 100%;
+            z-index: 0;
+            position: relative;
         }
     </style>
 </head>
-<body>
-        <nav>
-                <img class="logo" alt="" src="img/5.png">
-                    <ul>
-                        <li><a href="index.html" class="navlink">Работа с картой</a></li>
-                        <li><a href="about.html" class="navlink">О разработке</a></li>
-                    </ul>
-                    <button id="nmaps"><a href="https://n.maps.yandex.ru" class="navlink">Перейти на Народную карту</a></button>
-                </nav>
-            
-               
-
-                <canvas id="show" width="1855px" height="540px" hidden></canvas>
+<body> <canvas id="show" width="1855px" height="540px" hidden></canvas>
                     <div id="map"></div>
                 <canvas id="draw-canvas"></canvas>
 
@@ -47,14 +37,5 @@
                         </div>
                     </div>
                     
-
-
-            
-                
-       
-
-<footer>
-            
-    </footer>
 </body>
 </html>

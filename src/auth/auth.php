@@ -7,10 +7,15 @@
     <title>Аутентификация через Yandex</title>
 </head>
 <body>
+    <div class="nk-user-bar-view">
     <?php
-        $client_id = 'af50efe901b6470d98ef2182c1ef5876'; // Id приложения
-        $client_secret = '94a89595d6464fc299489b2eb0a549d4'; // Пароль приложения
-        $redirect_uri = 'http://auth.com/auth.php'; // Callback URI
+        $client_id = '104bbb1d48a84444b503ca8240c85eeb'; // Id приложения
+        $client_secret = '2b6f7a1ed14447068e0912b174532173'; // Пароль приложения
+        $redirect_uri = 'http://localhost/yndxforester/src/auth/auth.php';
+        // $redirect_uri = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        // $redirect_uri = explode('?', $redirect_uri);
+        // $redirect_uri = $redirect_uri[0]; // Callback URI
+		// echo $redirect_uri;
 
         $url = 'https://oauth.yandex.ru/authorize';
 
@@ -60,15 +65,21 @@
         }
 
         if ($result) {
-            echo "Социальный ID пользователя: " . $userInfo['id'] . '<br />';
-            echo "Имя пользователя: " . $userInfo['real_name'] . '<br />';
-            echo "Email: " . $userInfo['default_email'] . '<br />';
-            echo "Пол пользователя: " . $userInfo['sex'] . '<br />';
-            echo "День Рождения: " . $userInfo['birthday'] . '<br />';
+            $_SESSION['user'] = $userInfo;
+            echo '<div class="nk-user-bar-view__user-icon"><span class="nk-user-icon nk-user-icon_size_middle" style="background-image: url(https://avatars.yandex.net/get-yapic/'.$userInfo['default_avatar_id'].'/islands-retina-50);"></span></div>';
+            echo '<span class="nk-user-bar-view__name nk-user-bar-view__name_color_white">' .$userInfo['real_name']. '</span>';
+           
+           // echo "Email: " . $userInfo['default_email'] . '<br />';
+        }
+        ?>
+        </div>
+        <?php
+        if ($result) {
+            require 'map/index.html';
         }
 
-        $_SESSION['user'] = $userInfo;
-        echo '<img src="https://avatars.yandex.net/get-yapic/'.$userInfo['default_avatar_id'].'/islands-retina-50" alt="Олья">';
+       
     ?>
+
 </body>
 </html>

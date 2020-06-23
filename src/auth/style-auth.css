@@ -1,0 +1,7 @@
+.nk-user-bar-view {
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    pointer-events: auto;
+    z-index: 2;
+}

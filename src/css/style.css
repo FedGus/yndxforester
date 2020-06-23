@@ -153,3 +153,54 @@ article {
 footer {
 
 }
+/*-----------------*/
+
+.nk-user-bar-view {
+    position: absolute;
+    right: 16px;
+    top: 60px;
+    pointer-events: auto;
+    z-index: 2;
+    color: #e4e4e4;
+}
+
+.nk-user-bar-view__user-icon {
+    display: inline-block;
+    width: 43px;
+    height: 43px;
+    padding-top: 1px;
+    padding-left: 1px;
+    margin-top: -3px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 3px 0 0 rgba(0,0,0,.05), 0 1px 0 0 rgba(0,0,0,.05);
+}
+
+.nk-user-icon {
+    display: inline-block;
+    background: no-repeat 50%;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.nk-user-icon_size_middle {
+    width: 42px;
+    height: 42px;
+}
+
+.nk-user-bar-view__name_color_white {
+    color: #fff;
+}
+
+.nk-user-bar-view__name {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 38px;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
