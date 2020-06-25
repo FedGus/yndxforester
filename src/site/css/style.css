@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: Yndx; /* Имя шрифта */
+    src: url(../fonts/YandexSansDisplay-Regular.ttf); /* Путь к файлу со шрифтом */
+}
+
+body {
+    font-family: "Yndx";
+    line-height: 1.5;
+}
+
+nav {
+    height: 60px;
+    background-color: #fc0;
+    font-size: 24px;
+    position: relative !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+}
+
+nav p {
+    display: inline-block;
+    padding: 10px;
+}
+
+.main-about {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+    padding: 20px;
+}
+
+
+.face {
+    border-radius: 50%;
+    height: 150px;
+}
+
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin: 0px 10px 0px 10px;
+}
+
+
+.logo-tech {
+    width: 100px;
+}
+
+.tree {
+    margin: 8px 0px 0px 20px;
+    width: 45vw;
+}
+
+.role {
+    color: #616161;
+}
+
+.job {
+    text-align: center;
+}
+
+.mocups {
+    width: 100%;
+}
+
+h4, h3, h2 {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+
+footer {
+    border-top: 1px solid #dedddb;
+    padding: 10px;
+    text-align: center;
+}
+
+.car-1 {
+    height: 70vh;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+
+nav {
+    background-color: #fc0;
+    font-family: "Yndx";
+    font-size: 24px;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+
+ul {
+    display: inline-block;
+}
+
+li {
+    display: inline-block;
+    padding: 15px;
+}
+.navlink {
+    text-decoration: none;
+    color: black;
+}
+.navlink:hover {
+    transition: 0.5s;
+    color: whitesmoke;
+}
+
+#nmaps {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #e4e4e4;
+    border-radius: 10px;
+    font-family: "Yndx";
+    font-size: 16px;
+}
+
+.carousel-control-prev {
+    height:10px;
+}
+
+.carousel-indicators li {
+    padding: 0 !important;
+}

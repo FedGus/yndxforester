@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Распознавание объектов на спутниковых снимках</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <nav>
+        <img class="logo" alt="" src="img/5.png">
+        <ul>
+            <li><a href="../index.php" class="navlink">Работа с картой</a></li>
+            <li><a href="site/index.html" class="navlink">О разработке</a></li>
+        </ul>
+        <button id="nmaps"><a href="https://n.maps.yandex.ru" class="navlink">Перейти на Народную карту</a></button>
+    </nav>
+
+    <div class="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item car-1 active">
+                <img class="d-block w-100" src="img/razmetka.jpg" alt="Первый слайд">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3>Разметка карты</h3>
+                </div>
+              </div>
+              <div class="carousel-item car-1">
+                <img class="d-block w-100" src="img/maps.jpg" alt="Второй слайд">
+                <div class="carousel-caption d-none d-md-block">
+                    <h3 style="color: rgb(56, 56, 56);">Созданный объект на основе разметки</h3>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4">
+            <h2>Задание:</h2>
+        </div>
+        <p class="lead text-justify">
+            В рамках проекта предлагается автоматизировать векторизацию простых объектов на основе растровых 
+            данных, представленных в виде картографических снимков. Требуется создать браузерный плагин для 
+            сервиса с возможностью распознавания объектов растительности и гидрографии на спутниковых снимках, 
+            определения их контуров и типов, а также сохранения полученных объектов на карте.
+        </p>
+    </div>
+    <div class="container text-justify">
+        <div class="row mt-4">
+            <h3>Зачем это нужно?</h3>
+        </div>
+        <img src="img/tree-line.jpg" alt="tree" class="rounded tree float-right">
+        <p>Большинство крупных поисково-информационных картографических служб располагают векторными данными, 
+            полученными не только от геоинформационных компаний. Огромная часть визуальных элементов, расположенных на карте, 
+            таких как леса, водоемы, улицы, дома и т. п. создаются специалистами-картографами вручную при помощи веб-интерфейса. 
+            Существуют и сетевые краудсорсинговые геоинформационные системы, где любые зарегистрированные пользователи также 
+            в ручном режиме могут сами создавать или редактировать данные на карте, которые затем принимаются модераторами 
+            картографического производства и публикуются в общем доступе.</p> 
+        <p>Однако создание огромного массива визуальных картографических данных ручным способом является довольно затратным 
+            с точки зрения времени и трудовой силы. Несмотря на то, что ведущие картографические приложения предоставляют 
+            точные визуальные карты городов и областей в разных странах мира, отдельные территории остаются до сих пор неразмеченными.</p> 
+        <p>Автоматическое распознавание объектов на спутниковых снимках и их векторизация является перспективным способом 
+            получения информации о расположении различных объектов на местности. Отказ от ручной сегментации снимков особенно 
+            актуален, когда речь заходит о обработке больших участков земной поверхности в сжатые сроки.
+        </p>
+    </div>
+
+    <div class="container text-center mt-5">
+        <h2>Список участников и роли в проекте</h2>
+        <h4 style="margin: 30px 0 30px 0 !important;">Участники веб-студии Polyweb.Agency</h4>
+        <div class="row">
+            <div class="col-sm m-4">
+                <img src="img/feodor.jpg" alt="" class="face"><br>
+                <h3>Гусев Федор</h3>
+                <div class="text-justify">                    
+                    <p class="job">Full Stack веб-разработчик</p>
+                    Разработка алгоритмов сегментации изображений и распознавания контуров 
+                    объектов на спутниковых снимках, создание алгоритмов редактирования 
+                    распознанных контуров и отправка их на сервер.
+                </div>
+            </div>
+            <div class="col-sm m-4">
+                <img src="img/olga.jpg" alt="" class="face"><br>
+                <h3>Краснова Ольга</h3>
+                <div class="text-justify">
+                    <p class="job">Front-end разработчик</p>
+                    Разработка дизайна интерфейса, его верстка и наполнение контентом сайта 
+                    для демонстрации работы разрабатываемого плагина.
+                </div>
+            </div>
+            <div class="col-sm m-4">
+                <img src="img/luidmila.jpg" alt="" class="face"><br>
+                <h3>Зельднер Людмила</h3>
+                <div class="text-justify">
+                    <p class="job">Front-end разработчик</p>
+                    Разработка алгоритмов взаимодействия с клиентом и создание 
+                    браузерного расширения для требуемого сервиса.
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h4 class="mt-4">Способы коммуникации внутри команды:</h4>
+        <ol class="list-group-flush">
+            <li class="list-group-item">Беседа ВКонтакте</li>
+            <li class="list-group-item">Доска Trello</li>
+            <li class="list-group-item">Еженедельные онлайн-встречи Skype</li>
+        </ol>        
+        <h4 class="mt-4">Отчёты по встречам:</h4>
+        <p><b>17.02.2020</b> - Начало работы над проектом. Определен состав участников проекта, распределены
+        основные роли и обязанности, создана доска Trello для отслеживания выполнения задач проекта. 
+        </p>
+        <p><b>20.03.2020</b> - Встреча по проекту, обсуждение мокапов страниц и выбор алгоритма.</p>
+        <p><b>25.03.2020</b> - Обсуждение дизайна и верстки страниц, предложения по алгоритму разметки.</p>
+        <p><b>02.04.2020</b> - Командное изучение документации API Яндекс.Карт.</p>
+        <p><b>09.04.2020</b> - Оценка верстки страниц с картой, внесение предложений по изменению элементов и дизайна.</p>
+        <p><b>16.04.2020</b> - Рассмотрение методов реализации редактирования пользователем контуров на карте.</p>
+        <p><b>30.04.2020</b> - Групповой сбор данных (тайлов снимков) для обучения системы.</p>
+        <p><b>07.05.2020</b> - Обсуждение результатов внедрения алгоритма распознавания контуров объектов на спутниковых снимках.</p>
+        <p><b>28.05.2020</b> - Разбор документации для внедрения OAuth-авторизации.</p>
+        <p><b>11.06.2020</b> - Создание плана тестирования разработанной системы.</p>
+        <p><b>18.06.2020</b> - Обсуждение результатов тестирования продукта.</p>
+        <p><b>25.06.2020</b> - Подготовка отчетной документации.</p>
+    </div>
+
+    <div class="container">
+        <div class="row mt-4">
+            <h2>Ход работы:</h2>
+        </div>
+        <div class="row">
+            <h4>1. Предложен алгоритм разметки:</h4>
+        </div>
+        <p class="text-justify">В данном проекте опробован относительно новый подход к решению задачи сегментации 
+            изображений - метод водораздела.</p>
+        <p class="text-justify">Метод предлагает рассматривать изображение как некоторую карту местности, 
+            где значения яркостей представляют собой значения высот относительно некоторого уровня. 
+            Если эту местность заполнять водой, тогда образуются бассейны. При дальнейшем заполнении 
+            водой, эти бассейны объединяются. Места объединения этих бассейнов отмечаются как линии водораздела.</p>
+        <div class="row">
+            <h4>2. Созданы мокапы страницы для демонстрации работы проекта</h4>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>Прототип страницы “Работа с картой” с авторизацией на сайте</p>
+                <img src="img/mocups1.png" alt="mocups" class="rounded mocups">
+            </div>
+            <div class="col">
+                <p>Прототип страницы “Работа с картой”</p>
+                <img src="img/mocups2.png" alt="mocups" class="rounded mocups">
+            </div>
+        </div>
+        <div class="row">
+            <h4>3. Работа с документацией API Яндекс.Карт:</h4>
+        </div>
+        <p class="text-justify">
+            Верстка страницы с картой и ее внедрение на сайт с реализацией создания контуров и их редактирования</p>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <img src="img/site-maps.jpg" alt="maps on site" class="rounded mocups w-50">
+            </div>
+        </div>
+        <div class="row">
+            <h4>4. Работа с документацией API Яндекс. Паспорта:</h4>
+        </div>
+        <p class="text-justify">
+            Внедрение OAuth-авторизации через сервисы Яндекс.</p>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <img src="img/auth.jpg" alt="maps on site" class="rounded mocups w-50">
+            </div>
+        </div>
+        <div class="row">
+            <h4>5. Проведение НИР:</h4>
+        </div>
+        <p class="text-justify">
+            Проведение научно-исследовательской работы и выступление с ней на СНК.</p>
+        <div class="row">
+            <div class="col">
+                <p>Была проведена защита работы с презентацией</p>
+                <img src="img/prez.jpg" alt="prezentation" class="rounded mocups">
+            </div>
+            <div class="col">
+                <p>Выступление на СНК подтверждается сертификатами</p>
+                <img src="img/sert-fedya.jpg" alt="sertification Fedor" class="rounded mocups w-40">
+                <img src="img/sert-olya.jpg" alt="sertification Olga" class="rounded mocups w-40">
+
+            </div>
+        </div>
+        <div class="row">
+            <h4>5. Тестирование разработанного продукта:</h4>
+        </div>
+        <p class="text-justify">
+            Проведение комплексных процедур по тестированию функциональности, совместимости и безопасности.</p>
+        <div class="row">
+            <div class="col">
+                <p>Валидация кода</p>
+                <img src="img/htmlcheck.jpg" alt="htmlcheck" class="rounded mocups">
+            </div>
+            <div class="col">
+                <p>Тестирование совместимости</p>
+                <img src="img/sovmest.jpg" alt="sovmestimost" class="rounded mocups">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <h2>Используемые технологии в проекте:</h2>
+        </div>
+        <p> В основе реализации лежит создание нейронной сети для сегментации изображений 
+            и определения контуров найденных объектов с последующим их сохранением в виде пространственных данных
+        </p>
+        <div class="row text-center">
+            <div class="col-sm">
+                <img class="logo-tech" src="img/js.svg" alt="logo js">
+                <div>JavaScript</div>
+            </div>
+            <div class="col-sm">
+                <img class="logo-tech" src="img/python.svg" alt="logo js">
+                <div>Python</div>
+            </div>
+            <div class="col-sm">
+                <img class="logo-tech" src="img/opencv.svg" alt="logo js">
+                <div>OpenCV</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h2>Ссылки на Git-репозитории:</h2>
+        </div>
+        <p> Текущие версии разрабатываемого продукта:
+            <a href="https://github.com/FedGus/yndxforester">репозиторий на GitHub</a>
+        </p>
+    </div>
+    
+    <footer>
+        Разработано в команде <a href="http://polyweb.agency/">Polyweb.Agency</a>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

@@ -15,7 +15,7 @@
                 <img class="logo" alt="" src="img/5.png">
                     <ul>
                         <li><a href="index.php" class="navlink">Работа с картой</a></li>
-                        <li><a href="about.html" class="navlink">О разработке</a></li>
+                        <li><a href="site/index.html" class="navlink">О разработке</a></li>
                     </ul>
                     <button id="nmaps"><a href="https://n.maps.yandex.ru" class="navlink">Перейти на Народную карту</a></button>
                 </nav>
