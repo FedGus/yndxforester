@@ -23,7 +23,7 @@
             require "auth/auth.php";
             ?>
 <footer>
-            
+          Разработано в команде <a href="http://polyweb.agency" >Polyweb.Agency</a>
     </footer>
 </body>
 </html>

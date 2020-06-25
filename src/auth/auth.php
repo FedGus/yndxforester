@@ -7,7 +7,7 @@
     <title>Аутентификация через Yandex</title>
 </head>
 <body>
-    <div class="nk-user-bar-view">
+    
     <?php
         $client_id = '104bbb1d48a84444b503ca8240c85eeb'; // Id приложения
         $client_secret = '2b6f7a1ed14447068e0912b174532173'; // Пароль приложения
@@ -16,16 +16,6 @@
         // $redirect_uri = explode('?', $redirect_uri);
         // $redirect_uri = $redirect_uri[0]; // Callback URI
 		// echo $redirect_uri;
-
-        $url = 'https://oauth.yandex.ru/authorize';
-
-        $params = array(
-            'response_type' => 'code',
-            'client_id'     => $client_id,
-            'display'       => 'popup'
-        );
-
-        echo $link = '<p><a href="' . $url . '?' . urldecode(http_build_query($params)) . '">Аутентификация через Yandex</a></p>';
 
         if (isset($_GET['code'])) {
             $result = false;
@@ -61,25 +51,36 @@
                     $userInfo = $userInfo;
                     $result = true;
                 }
-            }
-        }
 
-        if ($result) {
-            $_SESSION['user'] = $userInfo;
-            echo '<div class="nk-user-bar-view__user-icon"><span class="nk-user-icon nk-user-icon_size_middle" style="background-image: url(https://avatars.yandex.net/get-yapic/'.$userInfo['default_avatar_id'].'/islands-retina-50);"></span></div>';
-            echo '<span class="nk-user-bar-view__name nk-user-bar-view__name_color_white">' .$userInfo['real_name']. '</span>';
-           
-           // echo "Email: " . $userInfo['default_email'] . '<br />';
+                if ($result) {
+                    $_SESSION['user'] = $userInfo;
+                    echo '<div class="nk-user-bar-view">';
+                    echo '<div class="nk-user-bar-view__user-icon"><span class="nk-user-icon nk-user-icon_size_middle" style="background-image: url(https://avatars.yandex.net/get-yapic/'.$userInfo['default_avatar_id'].'/islands-retina-50);"></span></div>';
+                    echo '<span class="nk-user-bar-view__name nk-user-bar-view__name_color_white">' .$userInfo['real_name']. '</span>';
+                    echo '</div>';
+                    require 'map/index.html';
+                }
         }
-        ?>
-        </div>
-        <?php
-        if ($result) {
-            require 'map/index.html';
-        }
+    }
 
+    if (!isset($_GET['code']) || !isset($tokenInfo['access_token'])) {
+        $url = 'https://oauth.yandex.ru/authorize';
+
+            $params = array(
+                'response_type' => 'code',
+                'client_id'     => $client_id,
+                'display'       => 'popup'
+            );
+            echo '<div class="auth-back">
+            <div class="auth-popup">
+            <img src="img/4.png" alt="" class="robot-icon">
+                <h3>Привет!</h3>
+                <p>Прежде, чем работать с картой, войди через сервисы Яндекса.</p>';
+                echo $link = '<button class="auth-button"><a href="' . $url . '?' . urldecode(http_build_query($params)) . '" class="navlink">Аутентификация</a></button>';
+            echo '</div></div>';
+            
+    }
        
-    ?>
-
+        ?>
 </body>
 </html>
