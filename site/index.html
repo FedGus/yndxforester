@@ -11,8 +11,12 @@
 </head>
 <body>
     <nav>
-        <img class="logo" alt="logo" src="img/5.png" >
-        <p>Распознавание объектов на спутниковых снимках</p>
+        <img class="logo" alt="" src="img/5.png">
+        <ul>
+            <li><a href="../index.php" class="navlink">Работа с картой</a></li>
+            <li><a href="site/index.html" class="navlink">О разработке</a></li>
+        </ul>
+        <button id="nmaps"><a href="https://n.maps.yandex.ru" class="navlink">Перейти на Народную карту</a></button>
     </nav>
 
     <div class="carousel">
@@ -22,19 +26,18 @@
               <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active">
+              <div class="carousel-item car-1 active">
                 <img class="d-block w-100" src="img/razmetka.jpg" alt="Первый слайд">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Разметка карты</h3>
                 </div>
               </div>
-              <div class="carousel-item">
+              <div class="carousel-item car-1">
                 <img class="d-block w-100" src="img/maps.jpg" alt="Второй слайд">
                 <div class="carousel-caption d-none d-md-block">
                     <h3 style="color: rgb(56, 56, 56);">Созданный объект на основе разметки</h3>
                 </div>
               </div>
-    
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -48,7 +51,7 @@
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row mt-4">
             <h2>Задание:</h2>
         </div>
         <p class="lead text-justify">
@@ -59,7 +62,7 @@
         </p>
     </div>
     <div class="container text-justify">
-        <div class="row">
+        <div class="row mt-4">
             <h3>Зачем это нужно?</h3>
         </div>
         <img src="img/tree-line.jpg" alt="tree" class="rounded tree float-right">
@@ -78,11 +81,11 @@
         </p>
     </div>
 
-    <div class="container text-center">
-        <h2 class>Список участников и роли в проекте</h2>
+    <div class="container text-center mt-5">
+        <h2>Список участников и роли в проекте</h2>
         <h4 style="margin: 30px 0 30px 0 !important;">Участники веб-студии Polyweb.Agency</h4>
         <div class="row">
-            <div class="col-sm">
+            <div class="col-sm m-4">
                 <img src="img/feodor.jpg" alt="" class="face"><br>
                 <h3>Гусев Федор</h3>
                 <div class="text-justify">                    
@@ -92,7 +95,7 @@
                     распознанных контуров и отправка их на сервер.
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm m-4">
                 <img src="img/olga.jpg" alt="" class="face"><br>
                 <h3>Краснова Ольга</h3>
                 <div class="text-justify">
@@ -101,7 +104,7 @@
                     для демонстрации работы разрабатываемого плагина.
                 </div>
             </div>
-            <div class="col-sm">
+            <div class="col-sm m-4">
                 <img src="img/luidmila.jpg" alt="" class="face"><br>
                 <h3>Зельднер Людмила</h3>
                 <div class="text-justify">
@@ -114,22 +117,31 @@
     </div>
     
     <div class="container">
-        <h4>Способы коммуникации внутри команды:</h4>
+        <h4 class="mt-4">Способы коммуникации внутри команды:</h4>
         <ol class="list-group-flush">
             <li class="list-group-item">Беседа ВКонтакте</li>
             <li class="list-group-item">Доска Trello</li>
             <li class="list-group-item">Еженедельные онлайн-встречи Skype</li>
         </ol>        
-        <h4>Отчёты по встречам:</h4>
-        <p><b>17.02.2020</b> - начало работы над проектом. Определен состав участников проекта, распределены
+        <h4 class="mt-4">Отчёты по встречам:</h4>
+        <p><b>17.02.2020</b> - Начало работы над проектом. Определен состав участников проекта, распределены
         основные роли и обязанности, создана доска Trello для отслеживания выполнения задач проекта. 
         </p>
-        <p><b>20.03.2020</b> - встреча по проекту, обсуждение мокапов страниц и выбор алгоритма.</p>
-        <p><b>25.03.2020</b> - обсуждение дизайна и верстки страниц, предложения по алгоритму разметки</p>
+        <p><b>20.03.2020</b> - Встреча по проекту, обсуждение мокапов страниц и выбор алгоритма.</p>
+        <p><b>25.03.2020</b> - Обсуждение дизайна и верстки страниц, предложения по алгоритму разметки.</p>
+        <p><b>02.04.2020</b> - Командное изучение документации API Яндекс.Карт.</p>
+        <p><b>09.04.2020</b> - Оценка верстки страниц с картой, внесение предложений по изменению элементов и дизайна.</p>
+        <p><b>16.04.2020</b> - Рассмотрение методов реализации редактирования пользователем контуров на карте.</p>
+        <p><b>30.04.2020</b> - Групповой сбор данных (тайлов снимков) для обучения системы.</p>
+        <p><b>07.05.2020</b> - Обсуждение результатов внедрения алгоритма распознавания контуров объектов на спутниковых снимках.</p>
+        <p><b>28.05.2020</b> - Разбор документации для внедрения OAuth-авторизации.</p>
+        <p><b>11.06.2020</b> - Создание плана тестирования разработанной системы.</p>
+        <p><b>18.06.2020</b> - Обсуждение результатов тестирования продукта.</p>
+        <p><b>25.06.2020</b> - Подготовка отчетной документации.</p>
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="row mt-4">
             <h2>Ход работы:</h2>
         </div>
         <div class="row">
@@ -152,6 +164,58 @@
             <div class="col">
                 <p>Прототип страницы “Работа с картой”</p>
                 <img src="img/mocups2.png" alt="mocups" class="rounded mocups">
+            </div>
+        </div>
+        <div class="row">
+            <h4>3. Работа с документацией API Яндекс.Карт:</h4>
+        </div>
+        <p class="text-justify">
+            Верстка страницы с картой и ее внедрение на сайт с реализацией создания контуров и их редактирования</p>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <img src="img/site-maps.jpg" alt="maps on site" class="rounded mocups w-50">
+            </div>
+        </div>
+        <div class="row">
+            <h4>4. Работа с документацией API Яндекс. Паспорта:</h4>
+        </div>
+        <p class="text-justify">
+            Внедрение OAuth-авторизации через сервисы Яндекс.</p>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <img src="img/auth.jpg" alt="maps on site" class="rounded mocups w-50">
+            </div>
+        </div>
+        <div class="row">
+            <h4>5. Проведение НИР:</h4>
+        </div>
+        <p class="text-justify">
+            Проведение научно-исследовательской работы и выступление с ней на СНК.</p>
+        <div class="row">
+            <div class="col">
+                <p>Была проведена защита работы с презентацией</p>
+                <img src="img/prez.jpg" alt="prezentation" class="rounded mocups">
+            </div>
+            <div class="col">
+                <p>Выступление на СНК подтверждается сертификатами</p>
+                <img src="img/sert-fedya.jpg" alt="sertification Fedor" class="rounded mocups w-40">
+                <img src="img/sert-olya.jpg" alt="sertification Olga" class="rounded mocups w-40">
+
+            </div>
+        </div>
+        <div class="row">
+            <h4>5. Тестирование разработанного продукта:</h4>
+        </div>
+        <p class="text-justify">
+            Проведение комплексных процедур по тестированию функциональности, совместимости и безопасности.</p>
+        <div class="row">
+            <div class="col">
+                <p>Валидация кода</p>
+                <img src="img/htmlcheck.jpg" alt="htmlcheck" class="rounded mocups">
+            </div>
+            <div class="col">
+                <p>Тестирование совместимости</p>
+                <img src="img/sovmest.jpg" alt="sovmestimost" class="rounded mocups">
             </div>
         </div>
     </div>
